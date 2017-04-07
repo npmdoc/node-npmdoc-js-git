@@ -1,0 +1,1743 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/creationix/js-git#readme">js-git (v0.7.8)</a>
+</h1>
+<h4>Git Implemented in JavaScript</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.js-git">module js-git</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-git.indexed_db">
+            function <span class="apidocSignatureSpan">js-git.</span>indexed_db
+            <span class="apidocSignatureSpan">(repo, prefix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-git.walkers">
+            function <span class="apidocSignatureSpan">js-git.</span>walkers
+            <span class="apidocSignatureSpan">(repo)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-git.websql_db">
+            function <span class="apidocSignatureSpan">js-git.</span>websql_db
+            <span class="apidocSignatureSpan">(repo, prefix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">js-git.</span>config_codec</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">js-git.</span>modes</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">js-git.</span>object_codec</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">js-git.</span>pack_codec</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">js-git.</span>pkt_line</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.js-git.config_codec">module js-git.config_codec</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-git.config_codec.decode">
+            function <span class="apidocSignatureSpan">js-git.config_codec.</span>decode
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-git.config_codec.encode">
+            function <span class="apidocSignatureSpan">js-git.config_codec.</span>encode
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.js-git.indexed_db">module js-git.indexed_db</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-git.indexed_db.indexed_db">
+            function <span class="apidocSignatureSpan">js-git.</span>indexed_db
+            <span class="apidocSignatureSpan">(repo, prefix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-git.indexed_db.init">
+            function <span class="apidocSignatureSpan">js-git.indexed_db.</span>init
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-git.indexed_db.loadAs">
+            function <span class="apidocSignatureSpan">js-git.indexed_db.</span>loadAs
+            <span class="apidocSignatureSpan">(type, hash, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-git.indexed_db.saveAs">
+            function <span class="apidocSignatureSpan">js-git.indexed_db.</span>saveAs
+            <span class="apidocSignatureSpan">(type, body, callback, forcedHash)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.js-git.modes">module js-git.modes</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-git.modes.isBlob">
+            function <span class="apidocSignatureSpan">js-git.modes.</span>isBlob
+            <span class="apidocSignatureSpan">(mode)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-git.modes.isFile">
+            function <span class="apidocSignatureSpan">js-git.modes.</span>isFile
+            <span class="apidocSignatureSpan">(mode)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-git.modes.toType">
+            function <span class="apidocSignatureSpan">js-git.modes.</span>toType
+            <span class="apidocSignatureSpan">(mode)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">js-git.modes.</span>blob</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">js-git.modes.</span>commit</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">js-git.modes.</span>exec</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">js-git.modes.</span>file</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">js-git.modes.</span>sym</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">js-git.modes.</span>tree</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.js-git.object_codec">module js-git.object_codec</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-git.object_codec.deframe">
+            function <span class="apidocSignatureSpan">js-git.object_codec.</span>deframe
+            <span class="apidocSignatureSpan">(buffer, decode)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-git.object_codec.frame">
+            function <span class="apidocSignatureSpan">js-git.object_codec.</span>frame
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-git.object_codec.treeMap">
+            function <span class="apidocSignatureSpan">js-git.object_codec.</span>treeMap
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-git.object_codec.treeSort">
+            function <span class="apidocSignatureSpan">js-git.object_codec.</span>treeSort
+            <span class="apidocSignatureSpan">(a, b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">js-git.object_codec.</span>decoders</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">js-git.object_codec.</span>encoders</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.js-git.pack_codec">module js-git.pack_codec</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-git.pack_codec.decodePack">
+            function <span class="apidocSignatureSpan">js-git.pack_codec.</span>decodePack
+            <span class="apidocSignatureSpan">(emit)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-git.pack_codec.encodePack">
+            function <span class="apidocSignatureSpan">js-git.pack_codec.</span>encodePack
+            <span class="apidocSignatureSpan">(emit)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-git.pack_codec.parseEntry">
+            function <span class="apidocSignatureSpan">js-git.pack_codec.</span>parseEntry
+            <span class="apidocSignatureSpan">(chunk)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.js-git.pkt_line">module js-git.pkt_line</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-git.pkt_line.deframer">
+            function <span class="apidocSignatureSpan">js-git.pkt_line.</span>deframer
+            <span class="apidocSignatureSpan">(emit)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-git.pkt_line.framer">
+            function <span class="apidocSignatureSpan">js-git.pkt_line.</span>framer
+            <span class="apidocSignatureSpan">(emit)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.js-git.walkers">module js-git.walkers</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-git.walkers.walkers">
+            function <span class="apidocSignatureSpan">js-git.</span>walkers
+            <span class="apidocSignatureSpan">(repo)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-git.walkers.walk">
+            function <span class="apidocSignatureSpan">js-git.walkers.</span>walk
+            <span class="apidocSignatureSpan">(seed, scan, loadKey, compare)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.js-git.websql_db">module js-git.websql_db</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-git.websql_db.websql_db">
+            function <span class="apidocSignatureSpan">js-git.</span>websql_db
+            <span class="apidocSignatureSpan">(repo, prefix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-git.websql_db.init">
+            function <span class="apidocSignatureSpan">js-git.websql_db.</span>init
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-git.websql_db.loadAs">
+            function <span class="apidocSignatureSpan">js-git.websql_db.</span>loadAs
+            <span class="apidocSignatureSpan">(type, hash, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-git.websql_db.loadRaw">
+            function <span class="apidocSignatureSpan">js-git.websql_db.</span>loadRaw
+            <span class="apidocSignatureSpan">(hash, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-git.websql_db.saveAs">
+            function <span class="apidocSignatureSpan">js-git.websql_db.</span>saveAs
+            <span class="apidocSignatureSpan">(type, body, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-git.websql_db.saveRaw">
+            function <span class="apidocSignatureSpan">js-git.websql_db.</span>saveRaw
+            <span class="apidocSignatureSpan">(hash, buffer, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.js-git" id="apidoc.module.js-git">module js-git</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.js-git.indexed_db" id="apidoc.element.js-git.indexed_db">
+        function <span class="apidocSignatureSpan">js-git.</span>indexed_db
+        <span class="apidocSignatureSpan">(repo, prefix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function mixin(repo, prefix) {
+  if (!prefix) throw new Error("Prefix required");
+  repo.refPrefix = prefix;
+  repo.saveAs = saveAs;
+  repo.loadAs = loadAs;
+  repo.readRef = readRef;
+  repo.updateRef = updateRef;
+  repo.hasHash = hasHash;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.js-git.walkers" id="apidoc.element.js-git.walkers">
+        function <span class="apidocSignatureSpan">js-git.</span>walkers
+        <span class="apidocSignatureSpan">(repo)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">walkers = function (repo) {
+  repo.logWalk = logWalk;   // (ref) =&gt; stream&lt;commit&gt;
+  repo.treeWalk = treeWalk; // (treeHash) =&gt; stream&lt;object&gt;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.js-git.websql_db" id="apidoc.element.js-git.websql_db">
+        function <span class="apidocSignatureSpan">js-git.</span>websql_db
+        <span class="apidocSignatureSpan">(repo, prefix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function mixin(repo, prefix) {
+  if (!prefix) throw new Error("Prefix required");
+  repo.refPrefix = prefix;
+  repo.saveAs = saveAs;
+  repo.saveRaw = saveRaw;
+  repo.loadAs = loadAs;
+  repo.loadRaw = loadRaw;
+  repo.readRef = readRef;
+  repo.updateRef = updateRef;
+  repo.hasHash = hasHash;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.js-git.config_codec" id="apidoc.module.js-git.config_codec">module js-git.config_codec</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.js-git.config_codec.decode" id="apidoc.element.js-git.config_codec.decode">
+        function <span class="apidocSignatureSpan">js-git.config_codec.</span>decode
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function decode(text) {
+  var config = {};
+  var section;
+  text.split(/[\r\n]+/).forEach(function (line) {
+    var match = line.match(/\[([^ \t"\]]+) *(?:"([^"]+)")?\]/);
+    if (match) {
+      section = config[match[1]] || (config[match[1]] = {});
+      if (match[2]) {
+        section = section[match[2]] = {};
+      }
+      return;
+    }
+    match = line.match(/([^ \t=]+)[ \t]*=[ \t]*(.+)/);
+    if (match) {
+      section[match[1]] = match[2];
+    }
+  });
+  return config;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.js-git.config_codec.encode" id="apidoc.element.js-git.config_codec.encode">
+        function <span class="apidocSignatureSpan">js-git.config_codec.</span>encode
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function encode(config) {
+  var lines = [];
+  Object.keys(config).forEach(function (name) {
+    var obj = config[name];
+    var deep = {};
+    var values = {};
+    var hasValues = false;
+    Object.keys(obj).forEach(function (key) {
+      var value = obj[key];
+      if (typeof value === 'object') {
+        deep[key] = value;
+      }
+      else {
+        hasValues = true;
+        values[key] = value;
+      }
+    });
+    if (hasValues) {
+      encodeBody('[' + name + ']', values);
+    }
+
+    Object.keys(deep).forEach(function (sub) {
+      var child = deep[sub];
+      encodeBody('[' + name + ' "' + sub + '"]', child);
+    });
+  });
+
+  return lines.join("\n") + "\n";
+
+  function encodeBody(header, obj) {
+    lines.push(header);
+    Object.keys(obj).forEach(function (name) {
+      lines.push( "\t" + name + " = " + obj[name]);
+    });
+  }
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.js-git.indexed_db" id="apidoc.module.js-git.indexed_db">module js-git.indexed_db</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.js-git.indexed_db.indexed_db" id="apidoc.element.js-git.indexed_db.indexed_db">
+        function <span class="apidocSignatureSpan">js-git.</span>indexed_db
+        <span class="apidocSignatureSpan">(repo, prefix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function mixin(repo, prefix) {
+  if (!prefix) throw new Error("Prefix required");
+  repo.refPrefix = prefix;
+  repo.saveAs = saveAs;
+  repo.loadAs = loadAs;
+  repo.readRef = readRef;
+  repo.updateRef = updateRef;
+  repo.hasHash = hasHash;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.js-git.indexed_db.init" id="apidoc.element.js-git.indexed_db.init">
+        function <span class="apidocSignatureSpan">js-git.indexed_db.</span>init
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function init(callback) {
+
+  db = null;
+  var request = indexedDB.open("tedit", 1);
+
+  // We can only create Object stores in a versionchange transaction.
+  request.onupgradeneeded = function(evt) {
+    var db = evt.target.result;
+
+    if (evt.dataLoss &amp;&amp; evt.dataLoss !== "none") {
+      return callback(new Error(evt.dataLoss + ": " + evt.dataLossMessage));
+    }
+
+    // A versionchange transaction is started automatically.
+    evt.target.transaction.onerror = onError;
+
+    if(db.objectStoreNames.contains("objects")) {
+      db.deleteObjectStore("objects");
+    }
+    if(db.objectStoreNames.contains("refs")) {
+      db.deleteObjectStore("refs");
+    }
+
+    db.createObjectStore("objects", {keyPath: "hash"});
+    db.createObjectStore("refs", {keyPath: "path"});
+  };
+
+  request.onsuccess = function (evt) {
+    db = evt.target.result;
+    callback();
+  };
+  request.onerror = onError;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.js-git.indexed_db.loadAs" id="apidoc.element.js-git.indexed_db.loadAs">
+        function <span class="apidocSignatureSpan">js-git.indexed_db.</span>loadAs
+        <span class="apidocSignatureSpan">(type, hash, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function loadAs(type, hash, callback) {
+  if (!callback) return loadAs.bind(this, type, hash);
+  loadRaw(hash, function (err, entry) {
+    if (!entry) return callback(err);
+    if (type !== entry.type) {
+      return callback(new TypeError("Type mismatch"));
+    }
+    callback(null, entry.body, hash);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+We can read objects back one at a time using `loadAs`.
+
+```js
+// Reading the file "greeting.txt" from a commit.
+
+// We first read the commit.
+var commit = yield repo.<span class="apidocCodeKeywordSpan">loadAs</span>("commit", commitHash);
+// We then read the tree using `commit.tree`.
+var tree = yield repo.loadAs("tree", commit.tree);
+// We then read the file using the entry hash in the tree.
+var file = yield repo.loadAs("blob", tree["greeting.txt"].hash);
+// file is now a binary buffer.
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.js-git.indexed_db.saveAs" id="apidoc.element.js-git.indexed_db.saveAs">
+        function <span class="apidocSignatureSpan">js-git.indexed_db.</span>saveAs
+        <span class="apidocSignatureSpan">(type, body, callback, forcedHash)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function saveAs(type, body, callback, forcedHash) {
+  if (!callback) return saveAs.bind(this, type, body);
+  var hash;
+  try {
+    var buffer = codec.frame({type:type,body:body});
+    hash = forcedHash || sha1(buffer);
+  }
+  catch (err) { return callback(err); }
+  var trans = db.transaction(["objects"], "readwrite");
+  var store = trans.objectStore("objects");
+  var entry = { hash: hash, type: type, body: body };
+  var request = store.put(entry);
+  request.onsuccess = function() {
+    // console.warn("SAVE", type, hash);
+    callback(null, hash, body);
+  };
+  request.onerror = function(evt) {
+    callback(new Error(evt.value));
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+In this example, we'll create a blob, create a tree containing that blob, create
+a commit containing that tree.  This shows how to create git objects manually.
+
+```js
+// First we create a blob from a string.  The `formats` mixin allows us to
+// use a string directly instead of having to pass in a binary buffer.
+var blobHash = yield repo.<span class="apidocCodeKeywordSpan">saveAs</span>("blob", "Hello World\n");
+
+// Now we create a tree that is a folder containing the blob as `greeting.txt`
+var treeHash = yield repo.saveAs("tree", {
+  "greeting.txt": { mode: modes.file, hash: blobHash }
+});
+
+// With that tree, we can create a commit.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.js-git.modes" id="apidoc.module.js-git.modes">module js-git.modes</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.js-git.modes.isBlob" id="apidoc.element.js-git.modes.isBlob">
+        function <span class="apidocSignatureSpan">js-git.modes.</span>isBlob
+        <span class="apidocSignatureSpan">(mode)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isBlob = function (mode) {
+  return (mode &amp; masks.blob) === masks.mask;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    function onRootTree(err, hash) {
+if (!hash) return callback(err);
+repo.pathToEntry(hash, path, onEntry);
+    }
+
+    function onEntry(err, entry) {
+if (!entry || !modes.<span class="apidocCodeKeywordSpan">isBlob</span>(entry.mode)) return callback(err);
+
+repo.loadAs("blob", entry.hash, function (err, content) {
+  if (!content) return callback(err);
+  if (entry.mode === modes.sym) {
+    content = options.decrypt(content);
+  }
+  callback(null, content);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.js-git.modes.isFile" id="apidoc.element.js-git.modes.isFile">
+        function <span class="apidocSignatureSpan">js-git.modes.</span>isFile
+        <span class="apidocSignatureSpan">(mode)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isFile = function (mode) {
+  return (mode &amp; masks.file) === masks.mask;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var entry = cached[parts[index]];
+  if (!entry) return callback();
+  mode = entry.mode;
+  hash = entry.hash;
+  index++;
+  continue;
+}
+if (modes.<span class="apidocCodeKeywordSpan">isFile</span>(mode)) return callback();
+return callback(null, {
+  last: {
+    mode: mode,
+    hash: hash,
+    path: parts.slice(0, index).join("/"),
+    rest: parts.slice(index).join("/"),
+  }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.js-git.modes.toType" id="apidoc.element.js-git.modes.toType">
+        function <span class="apidocSignatureSpan">js-git.modes.</span>toType
+        <span class="apidocSignatureSpan">(mode)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toType = function (mode) {
+  if (mode === modes.commit) return "commit";
+  if (mode === modes.tree) return "tree";
+  if ((mode &amp; masks.blob) === masks.mask) return "blob";
+  return "unknown";
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    path: "/"
+  };
+  return callback(null, walk(tree, treeScan, treeLoadKey, treeCompare));
+}
+
+function treeLoadKey(entry, callback) {
+  if (entry.mode !== modes.tree) return callback(null, entry);
+  var type = modes.<span class="apidocCodeKeywordSpan">toType</span>(entry.mode);
+  return repo.loadAs(type, entry.hash, function (err, body) {
+    if (err) return callback(err);
+    entry.body = body;
+    return callback(null, entry);
+  });
+}
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.js-git.object_codec" id="apidoc.module.js-git.object_codec">module js-git.object_codec</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.js-git.object_codec.deframe" id="apidoc.element.js-git.object_codec.deframe">
+        function <span class="apidocSignatureSpan">js-git.object_codec.</span>deframe
+        <span class="apidocSignatureSpan">(buffer, decode)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function deframe(buffer, decode) {
+  var space = indexOf(buffer, 0x20);
+  if (space &lt; 0) throw new Error("Invalid git object buffer");
+  var nil = indexOf(buffer, 0x00, space);
+  if (nil &lt; 0) throw new Error("Invalid git object buffer");
+  var body = bodec.slice(buffer, nil + 1);
+  var size = parseDec(buffer, space + 1, nil);
+  if (size !== body.length) throw new Error("Invalid body length.");
+  var type = bodec.toRaw(buffer, 0, space);
+  return {
+    type: type,
+    body: decode ? decoders[type](body) : body
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+function loadAs(type, hash, callback) {
+  if (!callback) return loadAs.bind(repo, type, hash);
+  loadRaw(hash, function (err, raw) {
+    if (raw === undefined) return callback(err);
+    var body;
+    try {
+      raw = codec.<span class="apidocCodeKeywordSpan">deframe</span>(raw);
+      if (raw.type !== type) throw new TypeError("Type mismatch");
+      body = codec.decoders[raw.type](raw.body);
+    }
+    catch (err) { return callback(err); }
+    callback(null, body);
+  });
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.js-git.object_codec.frame" id="apidoc.element.js-git.object_codec.frame">
+        function <span class="apidocSignatureSpan">js-git.object_codec.</span>frame
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function frame(obj) {
+  var type = obj.type;
+  var body = obj.body;
+  if (!bodec.isBinary(body)) body = encoders[type](body);
+  return bodec.join([
+    bodec.fromRaw(type + " " + body.length + "\0"),
+    body
+  ]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  });
+}
+
+function saveAs(type, body, callback) {
+  if (!callback) return saveAs.bind(repo, type, body);
+  var raw, hash;
+  try {
+    raw = codec.<span class="apidocCodeKeywordSpan">frame</span>({
+      type: type,
+      body: codec.encoders[type](body)
+    });
+    hash = sha1(raw);
+  }
+  catch (err) { return callback(err); }
+  saveRaw(hash, raw, function (err) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.js-git.object_codec.treeMap" id="apidoc.element.js-git.object_codec.treeMap">
+        function <span class="apidocSignatureSpan">js-git.object_codec.</span>treeMap
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function treeMap(key) {
+<span class="apidocCodeCommentSpan">  /*jshint validthis:true*/
+</span>  var entry = this[key];
+  return {
+    name: key,
+    mode: entry.mode,
+    hash: entry.hash
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.js-git.object_codec.treeSort" id="apidoc.element.js-git.object_codec.treeSort">
+        function <span class="apidocSignatureSpan">js-git.object_codec.</span>treeSort
+        <span class="apidocSignatureSpan">(a, b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function treeSort(a, b) {
+  var aa = (a.mode === modes.tree) ? a.name + "/" : a.name;
+  var bb = (b.mode === modes.tree) ? b.name + "/" : b.name;
+  return aa &gt; bb ? 1 : aa &lt; bb ? -1 : 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.js-git.pack_codec" id="apidoc.module.js-git.pack_codec">module js-git.pack_codec</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.js-git.pack_codec.decodePack" id="apidoc.element.js-git.pack_codec.decodePack">
+        function <span class="apidocSignatureSpan">js-git.pack_codec.</span>decodePack
+        <span class="apidocSignatureSpan">(emit)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function decodePack(emit) {
+
+  var state = $pack;
+  var sha1sum = sha1();
+  var inf = inflateStream();
+
+  var offset = 0;
+  var position = 0;
+  var version = 0x4b434150; // PACK reversed
+  var num = 0;
+  var type = 0;
+  var length = 0;
+  var ref = null;
+  var checksum = "";
+  var start = 0;
+  var parts = [];
+
+
+  return function (chunk) {
+    if (chunk === undefined) {
+      if (num || checksum.length &lt; 40) throw new Error("Unexpected end of input stream");
+      return emit();
+    }
+
+    for (var i = 0, l = chunk.length; i &lt; l; i++) {
+      // console.log([state, i, chunk[i].toString(16)]);
+      if (!state) throw new Error("Unexpected extra bytes: " + bodec.slice(chunk, i));
+      state = state(chunk[i], i, chunk);
+      position++;
+    }
+    if (!state) return;
+    if (state !== $checksum) sha1sum.update(chunk);
+    var buff = inf.flush();
+    if (buff.length) {
+      parts.push(buff);
+    }
+  };
+
+  // The first four bytes in a packfile are the bytes 'PACK'
+  function $pack(byte) {
+    if ((version &amp; 0xff) === byte) {
+      version &gt;&gt;&gt;= 8;
+      return version ? $pack : $version;
+    }
+    throw new Error("Invalid packfile header");
+  }
+
+  // The version is stored as an unsigned 32 integer in network byte order.
+  // It must be version 2 or 3.
+  function $version(byte) {
+    version = (version &lt;&lt; 8) | byte;
+    if (++offset &lt; 4) return $version;
+    if (version &gt;= 2 &amp;&amp; version &lt;= 3) {
+      offset = 0;
+      return $num;
+    }
+    throw new Error("Invalid version number " + num);
+  }
+
+  // The number of objects in this packfile is also stored as an unsigned 32 bit int.
+  function $num(byte) {
+    num = (num &lt;&lt; 8) | byte;
+    if (++offset &lt; 4) return $num;
+    offset = 0;
+    emit({version: version, num: num});
+    return $header;
+  }
+
+  // n-byte type and length (3-bit type, (n-1)*7+4-bit length)
+  // CTTTSSSS
+  // C is continue bit, TTT is type, S+ is length
+  function $header(byte) {
+    if (start === 0) start = position;
+    type = byte &gt;&gt; 4 &amp; 0x07;
+    length = byte &amp; 0x0f;
+    if (byte &amp; 0x80) {
+      offset = 4;
+      return $header2;
+    }
+    return afterHeader();
+  }
+
+  // Second state in the same header parsing.
+  // CSSSSSSS*
+  function $header2(byte) {
+    length |= (byte &amp; 0x7f) &lt;&lt; offset;
+    if (byte &amp; 0x80) {
+      offset += 7;
+      return $header2;
+    }
+    return afterHeader();
+  }
+
+  // Common helper for finishing tiny and normal headers.
+  function afterHeader() {
+    offset = 0;
+    if (type === 6) {
+      ref = 0;
+      return $ofsDelta;
+    }
+    if (type === 7) {
+      ref = "";
+      return $refDelta;
+    }
+    // console.log({type: type,length: length})
+    return $body;
+  }
+
+  // Big-endian modified base 128 number encoded ref offset
+  function $ofsDelta(byte) {
+    ref = byte &amp; 0x7f;
+    if (byte &amp; 0x80) return $ofsDelta2;
+    return $body;
+  }
+
+  function $ofsDelta2(byte) {
+    ref = ((ref + 1) &lt;&lt; 7) | (byte &amp; 0x7f);
+    if (byte &amp; 0x80) return $ofsDelta2;
+    return $body;
+  }
+
+  // 20 byte raw sha1 hash for ref
+  function $refDelta(byte) {
+    ref += toHex(byte);
+    if (++offset &lt; 20) return $refDelta;
+    return $body;
+  }
+
+  // Common helper for generating 2-character hex numbers
+  function toHex(num) {
+    return num &lt; 0x10 ? "0" + num.toString(16) : num.toString(16);
+  }
+
+  // Common helper for emitting all three object shapes
+  function emitObject() {
+    var body = bodec.join(parts);
+    if (body.length !== length) {
+      throw new Error("Body length mismatch");
+    }
+    var item = {
+      type: numToType[type],
+      size: length,
+      body: body,
+      offset: start
+    };
+    if (ref) item.ref = ref;
+    parts.length = 0;
+    start = 0;
+    offset = 0;
+    type = 0;
+    length = 0;
+    ref = null;
+    emit(item);
+  }
+
+  // Feed the deflated code to the inflate engine
+  function $body(byte, i, chunk) {
+    if (inf.write(byte)) return $body;
+    var buf = inf.flush();
+    if (buf.length !== length) throw new Error("Length mismatch, expected " + length + " got " + buf.length);
+    inf.recycle();
+    if (buf.length) {
+      parts.push(buf);
+    }
+    emitObject();
+    // If thi ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.js-git.pack_codec.encodePack" id="apidoc.element.js-git.pack_codec.encodePack">
+        function <span class="apidocSignatureSpan">js-git.pack_codec.</span>encodePack
+        <span class="apidocSignatureSpan">(emit)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function encodePack(emit) {
+  var sha1sum = sha1();
+  var left;
+  return function (item) {
+    if (item === undefined) {
+      if (left !== 0) throw new Error("Some items were missing");
+      return emit();
+    }
+    if (typeof item.num === "number") {
+      if (left !== undefined) throw new Error("Header already sent");
+      left = item.num;
+      write(packHeader(item.num));
+    }
+    else if (typeof item.type === "string" &amp;&amp; bodec.isBinary(item.body)) {
+      // The header must be sent before items.
+      if (typeof left !== "number") throw new Error("Headers not sent yet");
+
+      // Make sure we haven't sent all the items already
+      if (!left) throw new Error("All items already sent");
+
+      // Send the item in packstream format
+      write(packFrame(item));
+
+      // Send the checksum after the last item
+      if (!--left) {
+        emit(bodec.fromHex(sha1sum.digest()));
+      }
+    }
+    else {
+      throw new Error("Invalid item");
+    }
+  };
+  function write(chunk) {
+    sha1sum.update(chunk);
+    emit(chunk);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.js-git.pack_codec.parseEntry" id="apidoc.element.js-git.pack_codec.parseEntry">
+        function <span class="apidocSignatureSpan">js-git.pack_codec.</span>parseEntry
+        <span class="apidocSignatureSpan">(chunk)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function parseEntry(chunk) {
+  var offset = 0;
+  var byte = chunk[offset++];
+  var type = numToType[(byte &gt;&gt; 4) &amp; 0x7];
+  var size = byte &amp; 0xf;
+  var left = 4;
+  while (byte &amp; 0x80) {
+    byte = chunk[offset++];
+    size |= (byte &amp; 0x7f) &lt;&lt; left;
+    left += 7;
+  }
+  size = size &gt;&gt;&gt; 0;
+  var ref;
+  if (type === "ref-delta") {
+    ref = bodec.toHex(bodec.slice(chunk, offset, offset += 20));
+  }
+  else if (type === "ofs-delta") {
+    byte = chunk[offset++];
+    ref = byte &amp; 0x7f;
+    while (byte &amp; 0x80) {
+      byte = chunk[offset++];
+      ref = ((ref + 1) &lt;&lt; 7) | (byte &amp; 0x7f);
+    }
+  }
+
+  var body = inflate(bodec.slice(chunk, offset));
+  if (body.length !== size) {
+    throw new Error("Size mismatch");
+  }
+  var result = {
+    type: type,
+    body: body
+  };
+  if (typeof ref !== "undefined") {
+    result.ref = ref;
+  }
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.js-git.pkt_line" id="apidoc.module.js-git.pkt_line">module js-git.pkt_line</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.js-git.pkt_line.deframer" id="apidoc.element.js-git.pkt_line.deframer">
+        function <span class="apidocSignatureSpan">js-git.pkt_line.</span>deframer
+        <span class="apidocSignatureSpan">(emit)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function deframer(emit) {
+  var state = 0;
+  var offset = 4;
+  var length = 0;
+  var data;
+  var more = true;
+
+  return function (item) {
+
+    // Forward the EOS marker
+    if (item === undefined) return emit();
+
+    // Once we're in pack mode, everything goes straight through
+    if (state === 3) return emit(item);
+
+    // Otherwise parse the data using a state machine.
+    for (var i = 0, l = item.length; i &lt; l; i++) {
+      var byte = item[i];
+      if (state === 0) {
+        var val = fromHexChar(byte);
+        if (val === -1) {
+          if (byte === PACK[0]) {
+            offset = 1;
+            state = 2;
+            continue;
+          }
+          state = -1;
+          throw new SyntaxError("Not a hex char: " + String.fromCharCode(byte));
+        }
+        length |= val &lt;&lt; ((--offset) * 4);
+        if (offset === 0) {
+          if (length === 4) {
+            offset = 4;
+            more = emit("");
+          }
+          else if (length === 0) {
+            offset = 4;
+            more = emit(null);
+          }
+          else if (length &gt; 4) {
+            length -= 4;
+            data = bodec.create(length);
+            state = 1;
+          }
+          else {
+            state = -1;
+            throw new SyntaxError("Invalid length: " + length);
+          }
+        }
+      }
+      else if (state === 1) {
+        data[offset++] = byte;
+        if (offset === length) {
+          offset = 4;
+          state = 0;
+          length = 0;
+          if (data[0] === 1) {
+            more = emit(bodec.slice(data, 1));
+          }
+          else if (data[0] === 2) {
+            more = emit({progress: bodec.toUnicode(data, 1)});
+          }
+          else if (data[0] === 3) {
+            more = emit({error: bodec.toUnicode(data, 1)});
+          }
+          else {
+            more = emit(bodec.toUnicode(data).trim());
+          }
+        }
+      }
+      else if (state === 2) {
+        if (offset &lt; 4 &amp;&amp; byte === PACK[offset++]) {
+          continue;
+        }
+        state = 3;
+        more = emit(bodec.join([PACK, bodec.subarray(item, i)]));
+        break;
+      }
+      else {
+        throw new Error("pkt-line decoder in invalid state");
+      }
+    }
+
+    return more;
+  };
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var bodyWrite = pktLine.framer(function (chunk) {
+  bodyParts.push(chunk);
+});
+headers["Content-Type"] = "application/x-" + serviceName + "-request";
+socket.take(onWrite);
+
+var verified = 0;
+var parseResponse = pktLine.<span class="apidocCodeKeywordSpan">deframer</span>(function (line) {
+  if (verified === 2) {
+    socket.put(line);
+  }
+  else if (verified === 0) {
+    if (line !== "# service=" + serviceName) {
+      throw new Error("Illegal service response");
+    }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.js-git.pkt_line.framer" id="apidoc.element.js-git.pkt_line.framer">
+        function <span class="apidocSignatureSpan">js-git.pkt_line.</span>framer
+        <span class="apidocSignatureSpan">(emit)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function framer(emit) {
+  return function (item) {
+    if (item === undefined) return emit();
+    if (item === null) {
+      return emit(bodec.fromRaw("0000"));
+    }
+    if (typeof item === "string") {
+      item = bodec.fromUnicode(item);
+    }
+    return emit(bodec.join([frameHead(item.length + 4), item]));
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Send the initial request to start the connection.
+var headers = {};
+if (auth) headers.Authorization = auth;
+request("GET", gitUrl + "/info/refs?service=" + serviceName, headers, onResponse);
+
+// Prep for later requests
+var bodyParts = [];
+var bodyWrite = pktLine.<span class="apidocCodeKeywordSpan">framer</span>(function (chunk) {
+  bodyParts.push(chunk);
+});
+headers["Content-Type"] = "application/x-" + serviceName + "-request";
+socket.take(onWrite);
+
+var verified = 0;
+var parseResponse = pktLine.deframer(function (line) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.js-git.walkers" id="apidoc.module.js-git.walkers">module js-git.walkers</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.js-git.walkers.walkers" id="apidoc.element.js-git.walkers.walkers">
+        function <span class="apidocSignatureSpan">js-git.</span>walkers
+        <span class="apidocSignatureSpan">(repo)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">walkers = function (repo) {
+  repo.logWalk = logWalk;   // (ref) =&gt; stream&lt;commit&gt;
+  repo.treeWalk = treeWalk; // (treeHash) =&gt; stream&lt;object&gt;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.js-git.walkers.walk" id="apidoc.element.js-git.walkers.walk">
+        function <span class="apidocSignatureSpan">js-git.walkers.</span>walk
+        <span class="apidocSignatureSpan">(seed, scan, loadKey, compare)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function walk(seed, scan, loadKey, compare) {
+  var queue = [seed];
+  var working = 0, error, cb;
+  return {read: read, abort: abort};
+
+  function read(callback) {
+    if (!callback) return read;
+    if (cb) return callback(new Error("Only one read at a time"));
+    if (working) { cb = callback; return; }
+    var item = queue.shift();
+    if (!item) return callback();
+    try { scan(item).forEach(onKey); }
+    catch (err) { return callback(err); }
+    return callback(null, item);
+  }
+
+  function abort(callback) { return callback(); }
+
+  function onError(err) {
+    if (cb) {
+      var callback = cb; cb = null;
+      return callback(err);
+    }
+    error = err;
+  }
+
+  function onKey(key) {
+    working++;
+    loadKey(key, onItem);
+  }
+
+  function onItem(err, item) {
+    working--;
+    if (err) return onError(err);
+    var index = queue.length;
+    while (index &amp;&amp; compare(item, queue[index - 1])) index--;
+    queue.splice(index, 0, item);
+    if (!working &amp;&amp; cb) {
+      var callback = cb; cb = null;
+      return read(callback);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.js-git.websql_db" id="apidoc.module.js-git.websql_db">module js-git.websql_db</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.js-git.websql_db.websql_db" id="apidoc.element.js-git.websql_db.websql_db">
+        function <span class="apidocSignatureSpan">js-git.</span>websql_db
+        <span class="apidocSignatureSpan">(repo, prefix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function mixin(repo, prefix) {
+  if (!prefix) throw new Error("Prefix required");
+  repo.refPrefix = prefix;
+  repo.saveAs = saveAs;
+  repo.saveRaw = saveRaw;
+  repo.loadAs = loadAs;
+  repo.loadRaw = loadRaw;
+  repo.readRef = readRef;
+  repo.updateRef = updateRef;
+  repo.hasHash = hasHash;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.js-git.websql_db.init" id="apidoc.element.js-git.websql_db.init">
+        function <span class="apidocSignatureSpan">js-git.websql_db.</span>init
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function init(callback) {
+
+  db = openDatabase('tedit', '1.0', 'tedit local data', 10 * 1024 * 1024);
+  db.transaction(function (tx) {
+    tx.executeSql(
+      'CREATE TABLE IF NOT EXISTS objects (hash unique, body blob)'
+    );
+    tx.executeSql(
+      'CREATE TABLE IF NOT EXISTS refs (path unique, value text)'
+    );
+  }, function () {
+    console.error(arguments);
+    callback(new Error("Problem initializing database"));
+  }, function () {
+    callback();
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.js-git.websql_db.loadAs" id="apidoc.element.js-git.websql_db.loadAs">
+        function <span class="apidocSignatureSpan">js-git.websql_db.</span>loadAs
+        <span class="apidocSignatureSpan">(type, hash, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function loadAs(type, hash, callback) {
+<span class="apidocCodeCommentSpan">  /*jshint: validthis: true */
+</span>  if (!callback) return loadAs.bind(this, type, hash);
+  loadRaw(hash, function (err, buffer) {
+    if (!buffer) return callback(err);
+    var parts, body;
+    try {
+      parts = codec.deframe(buffer);
+      if (parts.type !== type) throw new Error("Type mismatch");
+      body = codec.decoders[type](parts.body);
+    }
+    catch (err) {
+      return callback(err);
+    }
+    callback(null, body);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+We can read objects back one at a time using `loadAs`.
+
+```js
+// Reading the file "greeting.txt" from a commit.
+
+// We first read the commit.
+var commit = yield repo.<span class="apidocCodeKeywordSpan">loadAs</span>("commit", commitHash);
+// We then read the tree using `commit.tree`.
+var tree = yield repo.loadAs("tree", commit.tree);
+// We then read the file using the entry hash in the tree.
+var file = yield repo.loadAs("blob", tree["greeting.txt"].hash);
+// file is now a binary buffer.
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.js-git.websql_db.loadRaw" id="apidoc.element.js-git.websql_db.loadRaw">
+        function <span class="apidocSignatureSpan">js-git.websql_db.</span>loadRaw
+        <span class="apidocSignatureSpan">(hash, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function loadRaw(hash, callback) {
+<span class="apidocCodeCommentSpan">  /*jshint: validthis: true */
+</span>  if (!callback) return loadRaw.bind(this, hash);
+  var sql = 'SELECT * FROM objects WHERE hash=?';
+  db.readTransaction(function (tx) {
+    tx.executeSql(sql, [hash], function (tx, result) {
+      if (!result.rows.length) return callback();
+      var item = result.rows.item(0);
+      var buffer;
+      try {
+        buffer = inflate(bodec.fromBase64(item.body));
+      }
+      catch (err) {
+        return callback(err);
+      }
+      callback(null, buffer);
+    }, function (tx, error) {
+      callback(new Error(error.message));
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return checkDelta(item);
+  }
+  return saveValue(item);
+}
+
+function resolveDelta(item) {
+  if (opts.onProgress) deltaProgress();
+  return repo.<span class="apidocCodeKeywordSpan">loadRaw</span>(item.ref, function (err, buffer) {
+    if (err) return onDone(err);
+    if (!buffer) return onDone(new Error("Missing base image at " + item.ref));
+    var target = codec.deframe(buffer);
+    item.type = target.type;
+    item.body = applyDelta(item.body, target.body);
+    return saveValue(item);
+  });
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.js-git.websql_db.saveAs" id="apidoc.element.js-git.websql_db.saveAs">
+        function <span class="apidocSignatureSpan">js-git.websql_db.</span>saveAs
+        <span class="apidocSignatureSpan">(type, body, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function saveAs(type, body, callback) {
+<span class="apidocCodeCommentSpan">  /*jshint: validthis: true */
+</span>  if (!callback) return saveAs.bind(this, type, body);
+  var hash, buffer;
+  try {
+    buffer = codec.frame({type:type,body:body});
+    hash = sha1(buffer);
+  }
+  catch (err) { return callback(err); }
+  this.saveRaw(hash, buffer, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+In this example, we'll create a blob, create a tree containing that blob, create
+a commit containing that tree.  This shows how to create git objects manually.
+
+```js
+// First we create a blob from a string.  The `formats` mixin allows us to
+// use a string directly instead of having to pass in a binary buffer.
+var blobHash = yield repo.<span class="apidocCodeKeywordSpan">saveAs</span>("blob", "Hello World\n");
+
+// Now we create a tree that is a folder containing the blob as `greeting.txt`
+var treeHash = yield repo.saveAs("tree", {
+  "greeting.txt": { mode: modes.file, hash: blobHash }
+});
+
+// With that tree, we can create a commit.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.js-git.websql_db.saveRaw" id="apidoc.element.js-git.websql_db.saveRaw">
+        function <span class="apidocSignatureSpan">js-git.websql_db.</span>saveRaw
+        <span class="apidocSignatureSpan">(hash, buffer, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function saveRaw(hash, buffer, callback) {
+<span class="apidocCodeCommentSpan">  /*jshint: validthis: true */
+</span>  if (!callback) return saveRaw.bind(this, hash, buffer);
+  var sql = 'INSERT INTO objects (hash, body) VALUES (?, ?)';
+  db.transaction(function (tx) {
+    var text;
+    try {
+      text = bodec.toBase64(deflate(buffer));
+    }
+    catch (err) {
+      return callback(err);
+    }
+    tx.executeSql(sql, [hash, text], function () {
+      callback(null, hash);
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    // So I will only implement it when I have concrete data to test against.
+    console.error({
+      list: pending[hash],
+      item: item
+    });
+    throw "TODO: pending value was found, resolve it";
+  }
+  return repo.<span class="apidocCodeKeywordSpan">saveRaw</span>(hash, buffer, onSave);
+}
+
+function onSave(err) {
+  if (err) return callback(err);
+  packChannel.take(onRead);
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
